@@ -111,4 +111,5 @@ $RECYCLE.BIN/
 lib/
 data/
 public/admin/
+package-lock.json
 *.env
