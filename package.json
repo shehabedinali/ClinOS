@@ -1,0 +1,89 @@
+{
+  "name": "clinos",
+  "description": "a clinic management system",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Shehabedin Ahmed",
+    "email": "shehabedinali@gmail.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/",
+    "config": "config/"
+  },
+  "engines": {
+    "node": "^20.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run compile && npm run mocha",
+    "lint": "eslint src/. test/. --config .eslintrc.json --ext .ts --fix",
+    "dev": "ts-node-dev --no-notify src/",
+    "start": "node lib/",
+    "mocha": "mocha --require ts-node/register --require source-map-support/register \"test/**/*.ts\" --recursive --exit",
+    "compile": "tsc",
+    "install:admin": "cd admin && npm install",
+    "build:admin": "cd admin && npm run build && cd ..",
+    "build": "npm run install:admin && npm run build:admin && npm run compile"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ],
+    "ignore": []
+  },
+  "types": "lib/",
+  "dependencies": {
+    "@feathersjs/authentication": "^4.5.18",
+    "@feathersjs/authentication-local": "^4.5.18",
+    "@feathersjs/authentication-oauth": "^4.5.18",
+    "@feathersjs/configuration": "^4.5.17",
+    "@feathersjs/errors": "^4.5.17",
+    "@feathersjs/express": "^4.5.18",
+    "@feathersjs/feathers": "^4.5.17",
+    "@feathersjs/socketio": "^4.5.18",
+    "@feathersjs/transport-commons": "^5.0.34",
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.7.0",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "cron": "^4.3.3",
+    "feathers-hooks-common": "^5.0.6",
+    "feathers-mongoose": "^8.5.1",
+    "helmet": "^5.1.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb-core": "^3.2.7",
+    "mongoose": "^8.18.0",
+    "mongoose-sequence": "^6.0.1",
+    "serve-favicon": "^2.5.1",
+    "sift": "^16.0.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.8.1",
+    "@types/cors": "^2.8.19",
+    "@types/cron": "^2.0.1",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mocha": "^10.0.10",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.0.0",
+    "@types/serve-favicon": "^2.5.7",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "axios": "^1.11.0",
+    "eslint": "^8.57.1",
+    "mocha": "^10.8.2",
+    "shx": "^0.4.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  }
+}
